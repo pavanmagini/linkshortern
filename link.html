@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Shortener</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .shortened-url {
+            margin-top: 20px;
+            font-size: 18px;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Link Shortener</h2>
+        <input type="url" id="longUrl" placeholder="Enter Long URL" required>
+        <button onclick="shortenUrl()">Shorten</button>
+        <div class="shortened-url" id="shortenedUrl"></div>
+    </div>
+
+    <script>
+        function shortenUrl() {
+            var longUrlInput = document.getElementById('longUrl');
+            var shortenedUrlOutput = document.getElementById('shortenedUrl');
+
+            // This is a placeholder for the backend logic to generate a shortened URL
+            // In a real application, this would be done on the server side.
+            // For simplicity, we are using a placeholder URL here.
+            var baseUrl = "https://yourshortener.com/";
+            var shortCode = Math.random().toString(36).substring(7); // Placeholder short code
+
+            var shortenedUrl = baseUrl + shortCode;
+            shortenedUrlOutput.textContent = "Shortened URL: " + shortenedUrl;
+        }
+    </script>
+
+</body>
+</html>
